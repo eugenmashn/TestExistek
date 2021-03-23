@@ -91,31 +91,26 @@ return (
         <Form.Group  widths={2} className='form-cr-up-post'>
         <Form.Input label="Прізвище та ім'я"  type="text" id='fullName' width={8}
                 name="fullName"value={!modelAuthor ? '' : modelAuthor.fullName}
-                onChange={event => inputGroupChangeHandler( event)}/>
-                <span className="text-danger">{errors.fullName}</span>
+                onChange={event => inputGroupChangeHandler( event)} error={errors.fullName}/>
         <Form.Input label='Адреса'  type="text" id='address' width={8}
                 name="address"value={!modelAuthor ? '' : modelAuthor.address}
-                onChange={event => inputGroupChangeHandler( event)}/>
-                <span className="text-danger">{errors.address}</span>
+                onChange={event => inputGroupChangeHandler( event)} error={errors.address}/>
         </Form.Group>
         <Form.Group  widths={2} className='form-cr-up-post'>
             <Form.Input label="Пошта"  type="text" id='email' width={8}
                 name="email"value={!modelAuthor ? '' : modelAuthor.email}
-                onChange={event => inputGroupChangeHandler( event)}/>
-            <span className="text-danger">{errors.email}</span>
+                onChange={event => inputGroupChangeHandler( event)} error={errors.email}/>
         </Form.Group>
         <Form.Group>
         <div className='eight wide field'>
         <label for='birtDay' >Дата народження</label>
         <DatePicker id='birtDay' name="birtDay" dateFormat='YYYY-MM-DD HH:MM:SS'
                 value={!modelAuthor ? '' : modelAuthor.birtDay} width={8} 
-                onChange={(value,event) => inputGroupChangeDate( value,event)} />
-                <span className="text-danger">{errors.birtDay}</span>
+                onChange={(value,event) => inputGroupChangeDate( value,event)} error={errors.birtDay}/>
                 </div>
         <Form.Input label="Вік"  type="number" id='age' width={4}
                 name="age"value={!modelAuthor ? '' : modelAuthor.age}
-                onChange={event => inputGroupChangeHandler( event)}/>
-                <span className="text-danger">{errors.age}</span>
+                onChange={event => inputGroupChangeHandler( event)} error={errors.age}/>
         </Form.Group>
         <div className = 'cr-up-submit-button'>
             <Button as={Link} to="/authors" type='submit' onClick={(e)=>{onSubmit(e) }} variant="primary"   >
